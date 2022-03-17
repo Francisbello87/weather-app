@@ -10,9 +10,11 @@ dateElement.innerHTML = today.toLocaleDateString("en-GB", options);
 
 let weather = {
   apiKey: "a77e750f82d09749d0e73579874c673d",
+  proxy: "https://cors-anywhere.herokuapp.com/",
   fetchWeather: function (query) {
     fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      this.proxy +
+        "https://api.openweathermap.org/data/2.5/weather?q=" +
         query +
         "&appid=" +
         this.apiKey +
@@ -95,4 +97,4 @@ function showError(error) {
   document.getElementById("notification").textContent = `${error.message}`;
 }
 
-// weather.fetchWeather(latitude, longitude);
+weather.fetchWeather(latitude, longitude);
