@@ -42,6 +42,10 @@ let weather = {
   },
   search: function () {
     this.fetchWeather(document.querySelector(".searchbar").value);
+    if (document.querySelector(".searchbar").value !== name) {
+      document.getElementById("notification").textContent =
+        "Enter valid location";
+    }
   },
 };
 function clearFields() {
