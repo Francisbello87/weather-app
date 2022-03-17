@@ -81,9 +81,8 @@ if (navigator.geolaocation) {
     console.log(position);
   });
 } else {
-  document.getElementById(
-    "notification"
-  ).textContent = `Browser does not support Geolocation`;
+  document.getElementById("notification").textContent =
+    "Browser does not support Geolocation";
 }
 
 function setPosition(position) {
