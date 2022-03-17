@@ -53,7 +53,7 @@ function clearFields() {
 //   var autocomplete = new google.maps.places.Autocomplete(input);
 // }
 document.querySelector(".searchbox button").addEventListener("click", () => {
-  if (!query) {
+  if (document.querySelector(".searchbar").value.length === 0) {
     alert("Please enter a valid location");
   } else {
     weather.search();
