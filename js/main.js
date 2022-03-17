@@ -13,8 +13,7 @@ let weather = {
   proxy: "https://cors-anywhere.herokuapp.com/",
   fetchWeather: function (query) {
     fetch(
-      this.proxy +
-        "https://api.openweathermap.org/data/2.5/weather?q=" +
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
         query +
         "&appid=" +
         this.apiKey +
