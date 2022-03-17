@@ -45,6 +45,8 @@ let weather = {
     if (document.querySelector(".searchbar").value !== name) {
       document.getElementById("notification").textContent =
         "Enter valid location";
+    } else {
+      weather.search();
     }
   },
 };
@@ -79,24 +81,24 @@ document.querySelector(".searchbar").addEventListener("keyup", (event) => {
   }
 });
 
-if (navigator.geolaocation) {
-  navigator.geolocation.getCurrentPosition((setPosition, showError) => {
-    console.log(position);
-  });
-} else {
-  document.getElementById("notification").textContent =
-    "Browser does not support Geolocation";
-}
+// if (navigator.geolaocation) {
+//   navigator.geolocation.getCurrentPosition((setPosition, showError) => {
+//     console.log(position);
+//   });
+// } else {
+//   document.getElementById("notification").textContent =
+//     "Browser does not support Geolocation";
+// }
 
-function setPosition(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
+// function setPosition(position) {
+//   let latitude = position.coords.latitude;
+//   let longitude = position.coords.longitude;
 
-  weather.fetchWeather(latitude, longitude);
-}
+//   weather.fetchWeather(latitude, longitude);
+// }
 
-function showError(error) {
-  document.getElementById("notification").textContent = `${error.message}`;
-}
+// function showError(error) {
+//   document.getElementById("notification").textContent = `${error.message}`;
+// }
 
-weather.fetchWeather(latitude, longitude);
+weather.fetchWeather("lagos");
