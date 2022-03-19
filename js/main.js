@@ -12,6 +12,17 @@ let weather = {
   apiKey: "a77e750f82d09749d0e73579874c673d",
   proxy: "https://cors-anywhere.herokuapp.com/",
   fetchWeather: function (query) {
+    function handleErrors(response) {
+      if (!response.ok) {
+        document.getElementById("notification").textContent =
+          "Enter valid location";
+        // console.log(response.statusText);
+      } else {
+        document.getElementById("notification").textContent = "";
+      }
+      return response;
+    }
+
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
         query +
@@ -19,6 +30,7 @@ let weather = {
         this.apiKey +
         "&units=metric"
     )
+      .then(handleErrors)
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
   },
@@ -42,12 +54,6 @@ let weather = {
   },
   search: function () {
     this.fetchWeather(document.querySelector(".searchbar").value);
-    if (document.querySelector(".searchbar").value !== name) {
-      document.getElementById("notification").textContent =
-        "Enter valid location";
-    } else {
-      weather.search();
-    }
   },
 };
 function clearFields() {
