@@ -4,6 +4,8 @@ const options = {
   day: "numeric",
   month: "short",
   year: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
 };
 const today = new Date();
 dateElement.innerHTML = today.toLocaleDateString("en-GB", options);
@@ -86,25 +88,5 @@ document.querySelector(".searchbar").addEventListener("keyup", (event) => {
     clearFields();
   }
 });
-
-// if (navigator.geolaocation) {
-//   navigator.geolocation.getCurrentPosition((setPosition, showError) => {
-//     console.log(position);
-//   });
-// } else {
-//   document.getElementById("notification").textContent =
-//     "Browser does not support Geolocation";
-// }
-
-// function setPosition(position) {
-//   let latitude = position.coords.latitude;
-//   let longitude = position.coords.longitude;
-
-//   weather.fetchWeather(latitude, longitude);
-// }
-
-// function showError(error) {
-//   document.getElementById("notification").textContent = `${error.message}`;
-// }
 
 weather.fetchWeather("lagos");
