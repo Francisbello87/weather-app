@@ -169,10 +169,10 @@ let getWeather = () => {
           // console.log(data);
         });
     });
+  } else {
+    document.getElementById("notification").textContent =
+      "Location blocked by user";
   }
-  // else {
-  //   document.getElementById("notification").textContent = "";
-  // }
 };
 
 function clearFields() {
