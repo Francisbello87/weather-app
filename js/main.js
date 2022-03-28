@@ -55,7 +55,6 @@ let weather = {
     const { speed } = data.wind;
 
     switch (icon) {
-      // all the cases and default
       case "01d":
         weatherIcon.src = "images/clear-skyD.png";
         weatherContents.style.backgroundImage = "url('images/day.gif')";
