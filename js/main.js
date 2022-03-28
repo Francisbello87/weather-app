@@ -136,69 +136,10 @@ let weather = {
         weatherContents.style.backgroundImage = "";
     }
 
-    // if (data.weather[0].icon === "01d") {
-    //   weatherIcon.src = "images/clear-skyD.png";
-    //   weatherContents.style.backgroundImage = "url('images/day.gif')";
-    // } else if (data.weather[0].icon === "01n") {
-    //   weatherIcon.src = "images/clear-skyN.png";
-    //   weatherContents.style.backgroundImage =
-    //     "url('images/stars-night-sky.gif')";
-    // } else if (data.weather[0].icon === "02n") {
-    //   weatherIcon.src = "images/few-cloudsN.png";
-    //   weatherContents.style.backgroundImage = "url('images/few-cloudsN.gif')";
-    //   // "http://openweather.org/img/wn/" + icon + ".png";
-    // } else if (data.weather[0].icon === "02d") {
-    //   weatherIcon.src = "images/clear-skyD.png";
-    //   weatherContents.style.backgroundImage = "url('images/few-clouds.gif')";
-    // } else if (
-    //   data.weather[0].icon === "03d" ||
-    //   data.weather[0].icon === "03n"
-    // ) {
-    //   weatherIcon.src = "images/scattered-cloudsN_D.png";
-    //   weatherContents.style.backgroundImage =
-    //     "url('images/scattered-cloudsD.gif')";
-    // } else if (
-    //   data.weather[0].icon === "04d" ||
-    //   data.weather[0].icon === "04n"
-    // ) {
-    //   weatherIcon.src = "images/broken-cloudsN_D.png";
-    //   weatherContents.style.backgroundImage = "url('images/broken.gif')";
-    // } else if (
-    //   data.weather[0].icon === "09d" ||
-    //   data.weather[0].icon === "09n"
-    // ) {
-    //   weatherIcon.src = "images/shower-rainN_D.png";
-    // } else if (data.weather[0].icon === "10d") {
-    //   weatherIcon.src = "images/rainD.png";
-    //   weatherContents.style.backgroundImage = "url('images/rain.gif')";
-    // } else if (data.weather[0].icon === "10n") {
-    //   weatherIcon.src = "images/rainN.png";
-    //   weatherContents.style.backgroundImage = "url('images/rain.gif')";
-    // } else if (
-    //   data.weather[0].icon === "11d" ||
-    //   data.weather[0].icon === "11n"
-    // ) {
-    //   weatherIcon.src = "images/thunderstormN_D.png";
-    //   weatherContents.style.backgroundImage = "url('images/thunder.gif')";
-    // } else if (
-    //   data.weather[0].icon === "13d" ||
-    //   data.weather[0].icon === "13n"
-    // ) {
-    //   weatherIcon.src = "images/snowN_D.png";
-    //   weatherContents.style.backgroundImage = "url('images/snow.gif')";
-    // } else if (
-    //   data.weather[0].icon === "50d" ||
-    //   data.weather[0].icon === "50n"
-    // ) {
-    //   weatherIcon.src = "images/mistN_D.png";
-    // }
-
     // console.log(name, icon, description, temp, humidity, speed);
     query.textContent = `Weather in ${name}:`;
     windSpeed.textContent = `Wind Speed: ${speed} km/hr`;
     weatherTemperature.textContent = Math.round(temp) + "°C";
-    // document.querySelector(".icon").src =
-    //   "http://openweather.org/img/wn/" + icon + ".png";
     weatherHumidity.textContent = `Humidity: ${humidity}%`;
     weatherDescription.textContent =
       description.charAt(0).toUpperCase() + description.slice(1);
@@ -243,8 +184,6 @@ let getWeather = () => {
           query.textContent = `Weather in ${name}:`;
           windSpeed.textContent = `Wind Speed: ${speed} km/hr`;
           weatherTemperature.textContent = Math.round(temp) + "°C";
-          // document.querySelector(".icon").src =
-          //   "http://openweather.org/img/wn/" + icon + ".png";
           weatherHumidity.textContent = `Humidity: ${humidity}%`;
           weatherDescription.textContent =
             description.charAt(0).toUpperCase() + description.slice(1);
